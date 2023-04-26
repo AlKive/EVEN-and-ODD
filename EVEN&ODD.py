@@ -25,3 +25,8 @@ with open("number.txt", 'r') as Number_File, open("even.txt", 'w') as Even_Numbe
     for line in Number_File:
      # ASSIGN each line from number.txt as an integer variable
         Number = int(line)
+
+    # CHECK if Number is EVEN
+    if Number % 2 == 0:
+      # APPEND the Number to even.txt file
+        Even_Number.write(str(Number) + "\n")
