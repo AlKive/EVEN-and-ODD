@@ -16,10 +16,10 @@ import time
 art = figlet_format(" ODD or EVEN?", font='digital', width=250)
 c_art = colored(art, 'yellow')
 
-print(Fore.LIGHTCYAN_EX + "┏━━━━━༻❁༺━━━━━┓" * 7)
+print(Fore.LIGHTCYAN_EX + "┏━━━━━༻❁༺━━━━━┓" * 6)
 for line in c_art.split("\n"):
     print(line.center(80))
-print(Fore.LIGHTCYAN_EX + "┗━━━━━༻❁༺━━━━━┛" * 7)
+print(Fore.LIGHTCYAN_EX + "┗━━━━━༻❁༺━━━━━┛" *6 )
 
 # OPEN file (numbers.txt,even.txt,odd.txt) as write
 with open("number.txt", 'w') as Number_File, open("even.txt", 'w') as Even_Number, open("odd.txt", 'w') as Odd_Number:
@@ -44,13 +44,46 @@ with open("number.txt", 'r') as Number_File, open("even.txt", 'w') as Even_Numbe
         elif Number % 2 != 0:
             # APPEND the Number to odd.txt file
             Odd_Number.write(str(Number) + "\n")
-        
+                  
 print("Checking the numbers...")
 time.sleep(3)
+
+
+#DISPLAY the numbers in even.txt
 with open("even.txt", 'r') as Even_Number :    
-  even = Even_Number.read().split('\n')  
-#DISPLAY the numbers in even.txt and odd.txt file  
-  print("Even Numbers: " + str(even))
+  even = Even_Number.read().split('\n')
+  text = "EVEN NUMBERS : "
+font = "digital"
+color = "magenta"
+output = pyfiglet.figlet_format(text, font=font, width=200)
+outputColor = colored(output, color)
+
+time.sleep(2)
+print(Fore.YELLOW + "=" * 100)
+print(Fore.LIGHTCYAN_EX + "•╔════◄░░░░░░►════╗•" * 5)
+for line in outputColor.split("\n"):
+    print(line.center(80))
+print(Fore.LIGHTCYAN_EX + "•╚════◄░░░░░░►════╝•" *5 )  
+time.sleep(3)
+print(Fore.LIGHTWHITE_EX + line.center(20) + str(even))
+
+
+
+#DISPLAY the numbers in odd.txt
 with open("odd.txt", 'r') as Odd_Number:  
   odd = Odd_Number.read().split('\n')  
-  print("Odd Numbers: " + str(odd))         
+  text = " ODD NUMBERS"
+font = "digital"
+color = "magenta"
+output = pyfiglet.figlet_format(text, font=font, width=200)
+outputColor = colored(output, color)
+
+time.sleep(2)
+print(Fore.YELLOW + "=" * 100)
+print(Fore.LIGHTCYAN_EX + "•╔════◄░░░░░░►════╗•" * 5)
+for line in outputColor.split("\n"):
+    print(line.center(80))
+print(Fore.LIGHTCYAN_EX + "•╚════◄░░░░░░►════╝•" * 5) 
+time.sleep(3) 
+print(Fore.LIGHTWHITE_EX + line.center(20) + str(odd))
+
