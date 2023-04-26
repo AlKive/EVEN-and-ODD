@@ -30,3 +30,8 @@ with open("number.txt", 'r') as Number_File, open("even.txt", 'w') as Even_Numbe
     if Number % 2 == 0:
       # APPEND the Number to even.txt file
         Even_Number.write(str(Number) + "\n")
+
+    # CHECK if Number is ODD
+    elif Number % 2 != 0:
+      # APPEND the Number to odd.txt file
+        Odd_Number.write(str(Number) + "\n")
