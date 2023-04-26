@@ -12,12 +12,21 @@ import pyfiglet
 from colorama import Back, Fore, Style, init
 import time
 
+# formatting the header
+art = figlet_format(" ODD or EVEN?", font='digital', width=250)
+c_art = colored(art, 'yellow')
+
+print(Fore.LIGHTCYAN_EX + "┏━━━━━༻❁༺━━━━━┓" * 7)
+for line in c_art.split("\n"):
+    print(line.center(80))
+print(Fore.LIGHTCYAN_EX + "┗━━━━━༻❁༺━━━━━┛" * 7)
+
 # OPEN file (numbers.txt,even.txt,odd.txt) as write
 with open("number.txt", 'w') as Number_File, open("even.txt", 'w') as Even_Number, open("odd.txt", 'w') as Odd_Number:
 
     # GET user input (20 numbers/Integers) and store it in numbers.txt file
     for i in range(20):
-        user = input("Enter a number: ")
+        user = input(Fore.LIGHTBLUE_EX + "Enter a number: " + Fore.YELLOW)
         Number_File.write(str(user) + "\n")
 
 with open("number.txt", 'r') as Number_File, open("even.txt", 'w') as Even_Number, open("odd.txt", 'w') as Odd_Number:
