@@ -19,3 +19,9 @@ with open("number.txt", 'w') as Number_File, open("even.txt", 'w') as Even_Numbe
     for i in range(20):
         user = input("Enter a number: ")
         Number_File.write(str(user) + "\n")
+
+with open("number.txt", 'r') as Number_File, open("even.txt", 'w') as Even_Number, open("odd.txt", 'w') as Odd_Number:
+    # LOOP the lines in number.txt file
+    for line in Number_File:
+     # ASSIGN each line from number.txt as an integer variable
+        Number = int(line)
