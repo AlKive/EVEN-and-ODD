@@ -26,12 +26,22 @@ with open("number.txt", 'r') as Number_File, open("even.txt", 'w') as Even_Numbe
      # ASSIGN each line from number.txt as an integer variable
         Number = int(line)
 
-    # CHECK if Number is EVEN
-    if Number % 2 == 0:
-      # APPEND the Number to even.txt file
-        Even_Number.write(str(Number) + "\n")
+        # CHECK if Number is EVEN
+        if Number % 2 == 0:
+            # APPEND the Number to even.txt file
+            Even_Number.write(str(Number) + "\n")
 
-    # CHECK if Number is ODD
-    elif Number % 2 != 0:
-      # APPEND the Number to odd.txt file
-        Odd_Number.write(str(Number) + "\n")
+        # CHECK if Number is ODD
+        elif Number % 2 != 0:
+            # APPEND the Number to odd.txt file
+            Odd_Number.write(str(Number) + "\n")
+        
+print("Checking the numbers...")
+time.sleep(3)
+with open("even.txt", 'r') as Even_Number :    
+  even = Even_Number.read().split('\n')  
+#DISPLAY the numbers in even.txt and odd.txt file  
+  print("Even Numbers: " + str(even))
+with open("odd.txt", 'r') as Odd_Number:  
+  odd = Odd_Number.read().split('\n')  
+  print("Odd Numbers: " + str(odd))         
