@@ -4,22 +4,12 @@
 # The first text file will be named even.txt that will contains all even numbers extracted from the numbers.txt. 
 # The second text file will be named odd.txt that will contains all odd numbers extracted from the numbers.txt
 
-'''PSEUDOCODE
-#GET user input (20 numbers/Integers)
-#OPEN file (numbers.txt,even.txt,odd.txt) as write
-#LOOP the lines in number.txt file
-FOR number in Number_File:
-  #ASSIGN each line from number.txt as an integer variable
-    Number = int(number)
- 
-  #CHECK if Number is EVEN
-  IF Number %2 == 0
-      APPEND the Number to even.txt file
- 
-  #CHECK if Number is ODD
-  IF Number %2 != 0
-      APPEND the Number to odd.txt file
+# import the necessary module
+from pyfiglet import figlet_format
+import pygame
+from termcolor import colored
+import pyfiglet
+from colorama import Back, Fore, Style, init
+import time
 
-#DISPLAY the numbers in even.txt and odd.txt file    
-          
-'''
+
